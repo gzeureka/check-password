@@ -9,7 +9,8 @@
   (codecs/bytes->hex (hash/sha3-512 s)))
 
 (defn get-salt-of-user [user-id]
-  ; 注意：实际应用中，应该根据 user-id 从 DB 中获取 salt
+  ; 注意：实际应用中，保存密码时，应该为每个 user 保存不同的 salt
+  ; 验证密码时，根据 user-id 从 DB 中获取 salt
   "5q3yhCdSDMj9Za9jJE0vhfExlTV8JeSe6XnfblAFkPY"
   )
 
